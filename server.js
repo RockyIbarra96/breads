@@ -9,6 +9,11 @@ console.log(PORT)
 // initialize the app object
 const app = express()
 
+// MIDDLEWARE
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 //ROUTES
 app.get('/', function(req, res) {
     //this gets sent to the client

@@ -12,9 +12,16 @@ breads.get('/', (req, res) => {
     //res.send(bread)
 })
 
-//SHOW
+// SHOW
 breads.get('/:arrayIndex', (req, res) => {
-    res.send(bread[req.params.arrayIndex])
-})
+    if (bread[req.params.arrayIndex]) {
+      res.render('Show', {
+        bread:bread[req.params.arrayIndex]
+      })
+    } else {
+      res.send('404')
+    }
+  })
+  
 
 module.exports = breads

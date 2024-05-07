@@ -16,8 +16,12 @@ function New () {
           <label htmlFor="image">Image</label>
           <input
             type="text"
+            pattern="https?://.+" 
+            title="Link must start with http:// or https://"
             name="image"
-            id="image"/>
+            id="image"
+            required
+            />
           <label htmlFor="hasGluten">Has Gluten?</label>
           <input
             type="checkbox"
